@@ -8,16 +8,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting('id_ID', null);
   
-  // Initialize the provider container
   final container = ProviderContainer();
   
-  // Access the secure storage service
   final secureStorage = container.read(secureStorageServiceProvider);
   
-  // The API key
   const apiKey = '202855be2c954c73868c740c5d249326';
-  
-  // Store the API key if it's not already there
+
   final storedKey = await secureStorage.read('api_key');
   if (storedKey == null) {
     await secureStorage.write('api_key', apiKey);

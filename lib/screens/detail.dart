@@ -1,7 +1,5 @@
-// lib/screens/detail.dart
-
 import 'package:flutter/material.dart';
-import 'package:interview_app/screens/explorasi.dart'; // Import ExplorationItem
+import 'package:interview_app/screens/explorasi.dart'; 
 
 class DetailScreen extends StatelessWidget {
   final ExplorationItem item;
@@ -11,22 +9,14 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // 1. Latar Belakang Utama
       backgroundColor: const Color(0xFF43A39D),
       body: Stack(
         children: [
-          // Gambar pola di latar belakang dengan opasitas
-          
-
-          // 2. Konten Utama
           SafeArea(
-            bottom: false, // SafeArea tidak berlaku untuk bagian bawah
+            bottom: false,
             child: Column(
               children: [
-                // Bagian atas untuk tombol kembali
                 _buildCustomAppBar(context),
-                
-                // Kontainer putih yang bisa di-scroll
                 Expanded(
                   child: Container(
                     width: double.infinity,
@@ -42,7 +32,6 @@ class DetailScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Gambar utama di dalam container
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 24),
                             child: ClipRRect(
@@ -55,8 +44,6 @@ class DetailScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          
-                          // Konten teks dan tombol
                           Padding(
                             padding: const EdgeInsets.all(24.0),
                             child: Column(
@@ -92,8 +79,6 @@ class DetailScreen extends StatelessWidget {
       ),
     );
   }
-
-  /// Widget helper untuk AppBar kustom
   Widget _buildCustomAppBar(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -104,17 +89,13 @@ class DetailScreen extends StatelessWidget {
             icon: const Icon(Icons.arrow_back, color: Colors.white, size: 28),
             onPressed: () => Navigator.of(context).pop(),
           ),
-          // Anda bisa menambahkan ikon lain di kanan jika perlu
-          // IconButton(icon: const Icon(Icons.more_vert, color: Colors.white, size: 28), onPressed: () {}),
         ],
       ),
     );
   }
-
-  /// Widget helper untuk membuat tombol aksi 'Suka' dan 'Komentar'
   Widget _buildActionButton({required IconData icon, required String label, required Color color}) {
     return InkWell(
-      onTap: () {}, // Tambahkan logika di sini
+      onTap: () {},
       borderRadius: BorderRadius.circular(8),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),

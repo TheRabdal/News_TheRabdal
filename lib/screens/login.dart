@@ -28,7 +28,6 @@ class _LoginScreenState extends State<LoginScreen> {
         MaterialPageRoute(builder: (context) => const ExplorasiScreen()),
       );
     } else {
-      // Tampilkan pesan error jika login gagal
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Login gagal. Periksa kembali kredensial Anda.'),
@@ -39,13 +38,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Memberikan kita tinggi dan lebar layar
 
     return Scaffold(
-      backgroundColor: Colors.white, // Mengatur latar belakang menjadi putih
+      backgroundColor: Colors.white, 
       body: Stack(
         children: [
-          // Menghapus gambar latar belakang dan menggantinya dengan Container putih
           Positioned.fill(child: Container(color: Colors.white)),
           Center(
             child: SingleChildScrollView(
@@ -67,12 +64,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    // Ilustrasi Astronot
-                    // Ganti URL dengan path aset lokal Anda jika gambar disimpan di project
                     Image.asset('assets/astronot.png', height: 150),
                     const SizedBox(height: 20),
-
-                    // Teks Judul
                     const Text(
                       'Hai, Mulai Eksplorasi Kamu 🚀',
                       textAlign: TextAlign.center,
@@ -83,16 +76,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(height: 10),
-
-                    // Teks Sub-judul
                     Text(
                       'Masuk ke aplikasi untuk mulai eksplorasi bersama kami sekarang',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                     ),
                     const SizedBox(height: 30),
-
-                    // Label Username
                     const Text(
                       'Username',
                       style: TextStyle(
@@ -101,10 +90,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(height: 8),
-
-                    // Input Field Username
                     TextField(
-                      controller: _usernameController, // Assign controller
+                      controller: _usernameController, 
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                         hintText: 'Masukan Username',
@@ -121,8 +108,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
-
-                    // Label Kata Sandi
                     const Text(
                       'Password',
                       style: TextStyle(
@@ -131,10 +116,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(height: 8),
-
-                    // Input Field Kata Sandi
                     TextField(
-                      controller: _passwordController, // Assign controller
+                      controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         hintText: 'Masukan Password',
@@ -151,8 +134,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(height: 30),
-
-                    // Tombol Masuk
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15.0),
@@ -170,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                       child: ElevatedButton(
-                        onPressed: _login, // Call the _login method
+                        onPressed: _login,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,
                           shadowColor: Colors.transparent,
@@ -190,15 +171,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(height: 25),
-
-                    // Teks Daftar
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.grey[600],
-                          fontFamily: 'Poppins', // Pastikan font family sama
+                          fontFamily: 'Poppins', 
                         ),
                         children: <TextSpan>[
                           const TextSpan(text: 'Belum punya akun? '),
@@ -210,7 +189,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                // Logika untuk navigasi ke halaman daftar
                               },
                           ),
                         ],

@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:interview_app/screens/detail.dart';
 import 'package:intl/intl.dart';
 
-// 1. Model Data yang Diperkaya
 class ExplorationItem {
-  final String imageUrl; // Gambar untuk daftar
-  final String imageDetailUrl; // Gambar untuk halaman detail
+  final String imageUrl;
+  final String imageDetailUrl;
   final String date;
   final String title;
-  final String description; // Deskripsi singkat
+  final String description;
   final String location;
-  final String fullDescription; // Deskripsi lengkap
+  final String fullDescription;
 
   const ExplorationItem({
     required this.imageUrl,
@@ -24,8 +23,6 @@ class ExplorationItem {
     required this.fullDescription,
   });
 }
-
-// 2. Data Dummy yang Lebih Lengkap dan Bervariasi
 final List<ExplorationItem> explorationData = [
   const ExplorationItem(
     imageUrl: 'assets/astronot.png',
@@ -47,7 +44,6 @@ final List<ExplorationItem> explorationData = [
     fullDescription:
         'Bandung, 21 Agustus 2024 – Penelitian terbaru terhadap cincin Saturnus mengungkapkan komposisi partikel es yang lebih kompleks dari perkiraan sebelumnya. Wahana Cassini berhasil mengirimkan data yang menunjukkan adanya jejak material organik, memicu perdebatan baru tentang asal-usul kehidupan di tata surya.',
   ),
-  // Tambahkan data lain dengan cara yang sama
 ];
 
 class ExplorasiScreen extends StatelessWidget {
@@ -95,7 +91,6 @@ class ExplorationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 3. Menggunakan InkWell untuk feedback visual saat di-tap
     return Card(
       elevation: 4,
       shadowColor: Colors.black.withOpacity(0.1),
